@@ -1,0 +1,20 @@
+name: qa
+
+on:
+  pull_request:
+    types: [opened, syncronize]
+
+jobs:
+  ingration_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
+
+      - name: Set up node version
+        users: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Run automation tests
+        run: npm test
