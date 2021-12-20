@@ -2,7 +2,7 @@ name: qa
 
 on:
   pull_request:
-    types: [opened, syncronize]
+    types: [opened, labeled, syncronize]
 
 jobs:
   ingration_test:
@@ -11,10 +11,13 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
-      - name: Set up node version
+      - name: Set up node version 
         uses: actions/setup-node@v2
         with:
           node-version: "14"
+
+      - name: Install dependencies
+        run: npm i 
 
       - name: Run automation tests
         run: npm test
