@@ -2,7 +2,7 @@ name: qa
 
 on:
   pull_request:
-    types: [opened, syncronize]
+    types: [opened, labeled, syncronize]
 
 jobs:
   ingration_test:
