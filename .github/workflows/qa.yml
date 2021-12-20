@@ -16,5 +16,8 @@ jobs:
         with:
           node-version: "14"
 
+      - name: Install dependencies
+        run: npm i
+
       - name: Run automation tests
         run: npm test
